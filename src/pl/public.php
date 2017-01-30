@@ -9,12 +9,12 @@ class RDP_WPB {
         $this->_version = $version;
         $this->_options = $options;
         add_action( 'wp_head', array( $this, 'enqueue_scripts' ), 997 );
-		    add_action( 'wp_head', array( $this, 'enqueue_styles' ), 998 );        
+    	add_action( 'wp_head', array( $this, 'enqueue_styles' ), 998 );        
     }//__construct
     
     public function enqueue_scripts(){
 
-        // GLOBAL FRONTEND SCRIPTS
+        // GLOBAL FRONTEND SCRIPT
         wp_enqueue_script( 
             'rdp-wpb', 
             plugins_url( 'js/script.js' , __FILE__ ), 
