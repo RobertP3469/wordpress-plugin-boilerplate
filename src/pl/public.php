@@ -3,9 +3,11 @@
 
 class RDP_WPB {
     private $_version;
+    private $plugin_name;
     private $_options = array();
 
-    public function __construct($version,$options){
+    public function __construct($plugin_name,$version,$options){
+        $this->plugin_name = $plugin_name;
         $this->_version = $version;
         $this->_options = $options;
         add_action( 'wp_head', array( $this, 'enqueue_scripts' ), 997 );
@@ -16,7 +18,7 @@ class RDP_WPB {
 
         // GLOBAL FRONTEND SCRIPT
         wp_enqueue_script( 
-            'rdp-wpb', 
+            $this->plugin_name, 
             plugins_url( 'js/script.js' , __FILE__ ), 
             array( 'jquery' ), 
             $this->_version, 
