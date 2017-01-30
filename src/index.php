@@ -137,7 +137,7 @@ if (!class_exists('RDP_WPB_PLUGIN', FALSE)) {
         private function define_front_hooks(){
             if(defined( 'DOING_AJAX' ))return;
             if(is_admin())return;
-            $plugin = new RDP_WPB(RDP_WPB_PLUGIN::PLUGIN_SLUG , RDP_WPB_PLUGIN::PLUGIN_VERSION );
+            $plugin = new RDP_WPB(RDP_WPB_PLUGIN::PLUGIN_VERSION, $this->_options);
         }//define_front_hooks
 
         /**
