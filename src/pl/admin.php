@@ -106,7 +106,7 @@ class RDP_WPB_ADMIN {
     */
     public function enqueue_styles() {
         wp_enqueue_style(
-                $this->plugin_name,
+                $this->plugin_name.'-admin',
                 plugin_dir_url( __FILE__ ) . 'css/admin-style.css',
                 array(),
                 $this->version,
