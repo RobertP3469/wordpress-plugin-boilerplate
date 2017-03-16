@@ -10,8 +10,8 @@ class RDP_WPB {
         $this->plugin_name = $plugin_name;
         $this->_version = $version;
         $this->_options = $options;
-        add_action( 'wp_head', array( $this, 'enqueue_scripts' ), 997 );
-    	add_action( 'wp_head', array( $this, 'enqueue_styles' ), 998 );        
+        add_action( 'wp_head', array( $this, 'enqueue_scripts' ), 990 );
+    	add_action( 'wp_head', array( $this, 'enqueue_styles' ), 991 );       
     }//__construct
     
     public function enqueue_scripts(){
