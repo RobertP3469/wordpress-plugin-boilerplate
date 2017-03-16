@@ -39,7 +39,7 @@ class RDP_WPB {
                 $this->plugin_name,
                 plugin_dir_url( __FILE__ ) . 'css/style.css',
                 array(),
-                $this->version,
+                $this->_version,
                 'all'
         );    
     }//enqueue_styles
