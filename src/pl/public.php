@@ -3,11 +3,11 @@
 
 class RDP_WPB {
     private $_version;
-    private $plugin_name;
+    private $_plugin_name;
     private $_options = array();
 
     public function __construct($plugin_name,$version,$options){
-        $this->plugin_name = $plugin_name;
+        $this->_plugin_name = $plugin_name;
         $this->_version = $version;
         $this->_options = $options;
         add_action( 'wp_head', array( $this, 'enqueue_scripts' ), 990 );
@@ -18,7 +18,7 @@ class RDP_WPB {
 
         // GLOBAL FRONTEND SCRIPT
         wp_enqueue_script( 
-            $this->plugin_name, 
+            $this->_plugin_name, 
             plugins_url( 'js/script.js' , __FILE__ ), 
             array( 'jquery' ), 
             $this->_version, 
@@ -36,7 +36,7 @@ class RDP_WPB {
     
     public function enqueue_styles(){
         wp_enqueue_style(
-                $this->plugin_name,
+                $this->_plugin_name,
                 plugin_dir_url( __FILE__ ) . 'css/style.css',
                 array(),
                 $this->_version,
