@@ -121,9 +121,9 @@ if (!class_exists('RDP_WPB_PLUGIN', FALSE)) {
             
             if (is_admin()){
                 include_once 'pl/admin.php' ;
-            } 
-			
-            include_once 'bl/public.php';			
+            } else {
+                include_once 'pl/public.php';
+            }		
          
         }//load_dependencies  
 
