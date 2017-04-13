@@ -10,8 +10,8 @@ The folder structure is as follows:
                         - bl (business logic layer)
                         - dl (data access layer)
                         - pl (presentation layer)
-                          - css (stylesheets)
+                          - css
                           - images
-                          - js (scripts)
+                          - js
     
 
