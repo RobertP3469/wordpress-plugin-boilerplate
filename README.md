@@ -11,6 +11,7 @@ The folder structure is as follows:
                         - dl (data access layer)
                         - pl (presentation layer)
                           - css (stylesheets)
+                          - images
                           - js (scripts)
     
-Since WordPress already has it's own data access libray, I typically only use the data access layer folder for API controller files.
+
