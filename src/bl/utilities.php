@@ -45,22 +45,23 @@ class RDP_WPB_UTILITIES {
         return $rv;
     }//abortExecution        
     
-    public static function globalRequest( $name, $default = '' ) {
-        $RV = '';
+    static function globalRequest( $name, $default = null ) {
+        $value = '';
         $array = $_GET;
+        $found = false;
 
         if ( isset( $array[ $name ] ) ) {
-                $RV = $array[ $name ];
+                $value = $array[ $name ];
+                $found = true;
         }else{
             $array = $_POST;
             if ( isset( $array[ $name ] ) ) {
-                    $RV = $array[ $name ];
+                    $value = $array[ $name ];
+                    $found = true;
             }                
         }
-        
-        if(empty($RV) && !empty($default)) return $default;
-        return $RV;
-    }    
+        return (empty( $found ) && $default !== null) ? $default : $value;
+    } 
     
     static function isScriptStyleImgRequest(){
         $url = (isset($_SERVER['REQUEST_URI']))? $_SERVER['REQUEST_URI'] : '';        
