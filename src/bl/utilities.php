@@ -3,6 +3,39 @@
 <?php
 
 class RDP_WPB_UTILITIES {
+    /**
+     * Prepends a leading slash.
+     *
+     * Will remove leading forward and backslashes if it exists already before adding
+     * a leading forward slash. This prevents double slashing a string or path.
+     *
+     * The primary use of this is for paths and thus should be used for paths. It is
+     * not restricted to paths and offers no specific path support.
+     *
+     * Opposite of {@see WordPress\trailingslashit()}.
+     *
+     * @param string $string What to add the leading slash to.
+     * @return string String with leading slash added.
+     */
+    public static function leadingslashit( $string ){
+            return '/' . self::unleadingslashit( $string );
+    }
+
+    /**
+     * Removes leading forward slashes and backslashes if they exist.
+     *
+     * The primary use of this is for paths and thus should be used for paths. It is
+     * not restricted to paths and offers no specific path support.
+     *
+     * Opposite of {@see WordPress\untrailingslashit()}.
+     *
+     * @param string $string What to remove the leading slashes from.
+     * @return string String without the leading slashes.
+     */
+    public static function unleadingslashit( $string ){
+            return ltrim( $string, '/\\' );
+    }      
+    
     static function abortExecution(){
         $rv = false;
         $wp_action = self::globalRequest('action');
